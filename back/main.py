@@ -6,7 +6,7 @@ from fastapi.responses import StreamingResponse
 from minhaIA import iaAnswer
 from fastapi.middleware.cors import CORSMiddleware
 import uuid
-
+import bson
 app = FastAPI()
 
 # Adicione o middleware CORS

@@ -2,7 +2,7 @@ from models import MessageModel
 from database import collection
 from bson import ObjectId
 import asyncio
-import bson  # Ensure bson is installed: pip install bson
+import bson
 
 from fastapi.responses import StreamingResponse
 from typing import AsyncGenerator

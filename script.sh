@@ -1,16 +1,13 @@
 #!/bin/bash
 
-# Iniciar Docker Compose
 docker-compose up -d
 
-# Iniciar aplicativo React
-cd chatbot
-npm install
-npm start &
+cd ./back
 
-# Instalar dependências do FastAPI
-cd ../back
-pip install fastapi motor pydantic uvicorn
+python3 -m venv venv
 
-# Iniciar API FastAPI
-uvicorn main:app --reload &
+source venv/bin/activate
+
+pip install fastapi motor pydantic uvicorn bson
+
+uvicorn main:app --reload
