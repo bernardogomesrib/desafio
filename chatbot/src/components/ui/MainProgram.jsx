@@ -89,7 +89,7 @@ const DrawerHeader = styled("div")(({ theme }) => ({
   ...theme.mixins.toolbar,
   justifyContent: "flex-end",
 }));
-export default function Sidebar2(props) {
+export default function MainProgram(props) {
   const { window } = props;
   const demoWindow = window ? window() : undefined;
   const theme = useTheme();
@@ -100,7 +100,7 @@ export default function Sidebar2(props) {
   const [message, setMessage] = React.useState("");
   const [darkMode, setDarkMode] = React.useState(true);
   const messagesEndRef = React.useRef(null);
-
+  const [possoMandarMensagem, setPossoMandarMensagem] = React.useState(true);
   React.useEffect(() => {
     async function getChats() {
       await fetchChats(setButtons);
@@ -279,7 +279,10 @@ export default function Sidebar2(props) {
               }}
               onSubmit={(e) => {
                 e.preventDefault();
-                sendMessageToChat(selectedChat, message, messages, setMessages,setButtons);
+                if (!possoMandarMensagem) {
+                  return;
+                }
+                sendMessageToChat(selectedChat, message, messages, setMessages,setButtons,setPossoMandarMensagem);
                 
                 setMessage("");
               }}

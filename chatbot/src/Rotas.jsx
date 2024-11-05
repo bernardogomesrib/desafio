@@ -1,14 +1,13 @@
 import React from 'react';
 import { Route, Routes } from "react-router-dom";
 
-import Sidebar2 from './components/ui/otherSidebar';
+import MainProgram from './components/ui/MainProgram';
 
 function Rotas() {
     return (
         <>
             <Routes>
-                <Route path="/" element={ <Sidebar2/> } />
-                
+                <Route path="/" element={ <MainProgram/> } />
             </Routes>
         </>
     )

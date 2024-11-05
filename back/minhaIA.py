@@ -76,5 +76,9 @@ def switchCaseMessage(message:str):
                 return "Desculpe, não sou programado para isso."
             case "solta um peidinho":
                 return "Prrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr... ops!"
+            case "solta um mega peidão":
+                return "KABOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOM!!! >.<"
+            case "solta um peidão":
+                return "KABOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOM!!! >.<"
             case _:
                 return "Desculpe, não entendi. Poderia reformular a pergunta?"

@@ -10,9 +10,10 @@ const fetchMessagesFromChat = async (id, setMessages) => {
       .then(data => setMessages(data))
       .catch(error => console.error('Error fetching messages:', error));
 }
-const sendMessageToChat = async (id, message, messages, setMessages,setButtons) => {
+const sendMessageToChat = async (id, message, messages, setMessages,setButtons,setPosso) => {
     const tempMessageId = 'MyTemporaryMessage';
     const botTempMessageId = 'BotTemporaryMessage';
+    setPosso(false);
     setMessages(prevMessages => [...prevMessages, { message, isMyMessage: true, id: tempMessageId }]);
     setMessages(prevMessages => [...prevMessages, { message: '...', isMyMessage: false, id: botTempMessageId }]);
     const response = await fetch(`http://localhost:8000/chats/${id}/messages`, {
@@ -45,7 +46,7 @@ const sendMessageToChat = async (id, message, messages, setMessages,setButtons) 
         ));
     }
     await fetchMessagesFromChat(id,setMessages);
-
+    setPosso(true);
 }
 
 const newChat = async (name, setButtons,actionsAfterfetchChat) => {
