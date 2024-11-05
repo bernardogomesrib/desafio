@@ -1,2 +1,6 @@
-não funciona a porcaria do dockerfile pra o back, só deus sabe o pq, literalmente usei as mesmas versões que estão no meu pc com pip freeze e não funciona
+funciona finalmente, só rodar o docker-compose que vai rodar até a mãe
 
+famoso
+```
+    docker-compose up -d
+```
